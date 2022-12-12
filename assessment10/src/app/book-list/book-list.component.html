@@ -1,0 +1,13 @@
+<div>
+    <ng-container *ngFor="let book of this.BookSrv.getBooks()">
+        <app-book [book]="book" (deleted)="deleteBook($event)"></app-book>
+    </ng-container>
+
+
+<h4>Add Book</h4>
+Title: <input type="text" [(ngModel)]="newTitle">
+Author: <input type="text" [(ngModel)]="newAuthor">
+Publication Year: <input type="number" [(ngModel)]="newPublicationYear">
+<button (click)="addBook()">Add</button>
+
+</div>
